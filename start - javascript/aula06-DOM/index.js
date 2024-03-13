@@ -1,8 +1,15 @@
-const titulo = document.querySelector("h1")
+document.getElementById("adicionarJogo").addEventListener("click", function () {
+  const jogo = prompt(
+    "Insira o nome do jogo que voce deseja adicionar a lista:"
+  );
 
-console.log(titulo)
+  const liElement = document.createElement("li");
+  liElement.innerText = jogo
 
-titulo.addEventListener("click", function () {
-    titulo.
-  
-})
+  const ulElement = document.getElementById("listaDeJogos");
+
+  ulElement.appendChild(liElement)
+
+
+
+});
