@@ -4,16 +4,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aula 06 dom</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <h1 id="titulo" class="bg-blue">Aula 6 - dom</h1>
 
+    <form id="cadastrarJogo">
+      <h3>Cadastrar Novo Jogo</h3>
+      <label for="nome">Nome do jogo:</label>
+      <input type="text" name="nome" id="nome" />
+      <br /><br />
+      <label for="ano">Ano de Lançamento:</label>
+      <input type="text" name="ano" id="ano" />
+      <br /><br />
+      <label for="genero">Gênero</label>
+      <input type="text" name="genero" id="genero" />
+      <br /><br />
+      <button type="submit">Adicionar Jogo</button>
+    </form>
+
+    <hr />
+
     <h2>Lista de jogas</h2>
 
     <ul id="listaDeJogos"></ul>
-
-    <button id="adicionarJogo">adicionar jogo</button>
 
     <script src="index.js"></script>
   </body>

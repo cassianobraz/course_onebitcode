@@ -1,15 +1,37 @@
-document.getElementById("adicionarJogo").addEventListener("click", function () {
-  const jogo = prompt(
-    "Insira o nome do jogo que voce deseja adicionar a lista:"
-  );
+function toKebabCase(str) {
+  return str.split(" ").join("-").toLowerCase();
+}
 
+function removerLi(id) {
+  const liParaRemover = document.getElementById(id);
+  liParaRemover.remove();
+}
+
+function adicionarLi(jogo) {
   const liElement = document.createElement("li");
-  liElement.innerText = jogo
+  liElement.id = toKebabCase(jogo.nome);
+  liElement.textContent = `Nome: ${jogo.nome} | Ano de Lançamento: ${jogo.ano} | Gênero: ${jogo.genero}`;
 
-  const ulElement = document.getElementById("listaDeJogos");
+  document.getElementById("listaDeJogos").appendChild(liElement);
+}
 
-  ulElement.appendChild(liElement)
+const form = document.getElementById("cadastrarJogo");
 
+form.addEventListener("submit", function (evento) {
+  evento.preventDefault();
 
+  const inputNome = document.getElementById("nome");
+  const inputAno = document.getElementById("ano");
+  const inputGenero = document.getElementById("genero");
 
+  const jogo = {};
+
+  jogo.nome = inputNome.value;
+  jogo.ano = inputAno.value;
+  jogo.genero = inputGenero.value;
+
+  adicionarLi(jogo);
+
+  //* método para limpar todo o formulário
+  evento.target.reset();
 });
